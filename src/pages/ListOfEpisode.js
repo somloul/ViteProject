@@ -1,12 +1,14 @@
-import ListCard from "../components/ListCard"
+import Episode from "../components/Episode"
 import { getEpisode } from "../utils/Api"
+import ListEpisode from "../components/ListEpisode"
 
 const ListOfEpisode = async (firstParam, secondParam) => {
   const res = await getEpisode()
   const data = res.map((element) => ({
-    text: `${element.episode} ${element.name} `,
+    textTitle: `${element.name} `,
+    textDate: `${element.air_date} `,
   }))
-  return ListCard(data)
+  return ListEpisode(data)
 }
 
 export default ListOfEpisode

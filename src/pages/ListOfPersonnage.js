@@ -1,10 +1,10 @@
 import ListCard from "../components/ListCard"
-import { getUserFromApi } from "../utils/Api"
+import { getPersonnage } from "../utils/Api"
 
 const ListOfPersonnage = async (firstParam, secondParam) => {
-  const res = await getUserFromApi()
+  const res = await getPersonnage()
   const data = res.map((element) => ({
-    text: `${element.name}  `,
+    text: `${element.name} ${element.statut} ${element.species} ${element.type} `,
     src: element.image
   }))
   return ListCard(data)

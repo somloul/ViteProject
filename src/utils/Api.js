@@ -18,5 +18,5 @@ export const getEpisode = async () => {
   const req = await fetch('https://rickandmortyapi.com/api/episode')
   const res = await req.json()
 
-  return res
+  return res.results
 }
